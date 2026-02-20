@@ -17,7 +17,7 @@ export default async function Home({
   const category = params?.category || "";
 
   const res = await fetch(
-    `http://localhost:5000/api/products?search=${search}&category=${category}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/api/products?search=${search}&category=${category}`,
     { cache: "no-store" },
   );
 
